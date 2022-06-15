@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Vendas.Context;
+using Vendas.Repositories;
+using Vendas.Repositories.Interfaces;
 
 namespace Vendas;
 public class Startup
@@ -16,7 +18,8 @@ public class Startup
     {
         services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+        services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddControllersWithViews();
     }
 
