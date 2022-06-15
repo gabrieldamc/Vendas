@@ -11,7 +11,7 @@ using Vendas.Context;
 namespace Vendas.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220614215401_PopularLanches")]
+    [Migration("20220615222921_PopularLanches")]
     partial class PopularLanches
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
